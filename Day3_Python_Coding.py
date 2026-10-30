@@ -195,50 +195,53 @@ else:
     print("You CANNOT ride the rollercoaster")  
 
 #Day 3 Project: Treasure Island (also Task 7)
-print('''
-                    ____...------------...____
-               _.-"` /o/__ ____ __ __  __ \o\_`"-._
-             .'     / /                    \ \     '.
-             |=====/o/======================\o\=====|
-             |____/_/________..____..________\_\____|
-             /   _/ \_     <_o#\__/#o_>     _/ \_   \
-             \_________\####/_________/
-              |===\!/========================\!/===|
-              |   |=|          .---.         |=|   |
-              |===|o|=========/     \========|o|===|
-              |   | |         \() ()/        | |   |
-              |===|o|======{'-.) A (.-'}=====|o|===|
-              | __/ \__     '-.\uuu/.-'    __/ \__ |
-              |==== .'.'^'.'.====|
-              |  _\o/   __  {.' __  '.} _   _\o/  _|
-              `""""-""""""""""""""""""""""""""-""""`
+print(r'''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\ ` . "-._ /_______________|_______
+|                   | |o ;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
 ''')
-print("Welcome to Treasure Island!")
+print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
+choice1 = input('You\'re at a crossroad, where do you want to go? '
+                'Type "left" or "right".\n').lower()
 
-direction = input(
-    "You're at a crossroads. Where do you want to go? Type left or right: "
-).strip().lower()
-
-if direction == "left":
-    print("You reach a lake with an island in the middle.")
-    choice = input("Type wait for a boat or swim across: ").strip().lower()
-
-    if choice == "wait":
-        print("The boat takes you safely to the island.")
-        door = input("Choose a door: red, yellow, or blue: ").strip().lower()
-        
-        if door == "yellow":
-            print("You found the treasure! You win!")
-        elif door == "red":
-            print("The room is full of fire. Game over.")
-        elif door == "blue":
-            print("You are eaten by beasts. Game over.")
+if choice1 == "left":
+    choice2 = input('You\'ve come to a lake. '
+                    'There is an island in the middle of the lake. '
+                    'Type "wait" to wait for a boat. '
+                    'Type "swim" to swim across.\n').lower()
+    if choice2 == "wait":
+        choice3 = input("You arrive at the island unharmed. "
+                        "There is house with 3 doors. One red, "
+                        "one yellow and one blue. "
+                        "Which colour do you choose?\n").lower()
+        if choice3 == "red":
+            print("It's a room full of fire. Game Over")
+        elif choice3 == "yellow":
+            print("You found the treasure. You Win!")
+        elif choice3 == "blue":
+            print("You enter a room of beasts. Game Over.")
         else:
-            print("That door doesn't exist. Game over.")
-    elif choice == "swim":
-        print("A hungry trout attacks you. Game over.")
+            print("You chose a door that doesn't exist. Game Over.")
     else:
-        print("You hesitate too long. Game over.")
+        print("You got attacked by an angry trout. Game Over.")
+
 else:
-    print("You fall into a hole. Game over.")
+    print("You fell in to a hole. Game Over.")
